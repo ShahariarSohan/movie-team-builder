@@ -7,10 +7,10 @@ const Budget = ({ invested, remaining }) => {
         Total Budget:<span>30000</span>$
       </h1>
       <h1>
-        Invested :<span>{invested}</span>$
+        Remaining:<span>{remaining}</span>$
       </h1>
       <h1>
-        Remaining:<span>{remaining}</span>$
+        Invested :<span>{invested}</span>$
       </h1>
     </div>
   );

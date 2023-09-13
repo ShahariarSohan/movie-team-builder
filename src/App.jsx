@@ -12,12 +12,13 @@ function App() {
     if (duplicate) {
       return alert(`You have already hired him`);
     } else {
-      if (invested >= 30000) {
-        return alert("You do not have such budget");
+      if (invested > 30000) {
+        return alert("You total budget has finished");
+      } else {
+        setRemaining(remaining - cart.salary);
+        setInvested(invested + cart.salary);
+        setHired([...hired, cart]);
       }
-      setRemaining(remaining - cart.salary);
-      setInvested(invested + cart.salary);
-      setHired([...hired, cart]);
     }
   };
   return (
