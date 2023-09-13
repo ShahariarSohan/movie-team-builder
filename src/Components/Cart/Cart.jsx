@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const Cart = ({ cart, handleHireButton }) => {
-  const { image, name, role, salary } = cart;
+  const { id, image, name, role, salary } = cart;
   return (
     <div className=" cart-div p-10 space-y-3  bg-slate-500  rounded-lg mx-auto">
       <img src={image}></img>
@@ -12,7 +12,7 @@ const Cart = ({ cart, handleHireButton }) => {
       </div>
       <div className="text-center ">
         <button
-          onClick={() => handleHireButton(cart)}
+          onClick={() => handleHireButton(id, cart)}
           className=" mx-auto btn bg-red-400 px-10 py-2 font-bold text-white rounded-md"
         >
           Hire

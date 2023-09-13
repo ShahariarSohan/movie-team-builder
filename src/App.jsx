@@ -5,8 +5,13 @@ import SelectionBoard from "./Components/SelectionBoard/SelectionBoard";
 
 function App() {
   const [hired, setHired] = useState([]);
-  const handleHireButton = (cast) => {
-    setHired([...hired, cast]);
+  const handleHireButton = (id, cart) => {
+    const duplicate = hired.find((cast) => cast.id === id);
+    if (duplicate) {
+      alert(`You have already hired him`);
+    } else {
+      setHired([...hired, cart]);
+    }
   };
   return (
     <>
