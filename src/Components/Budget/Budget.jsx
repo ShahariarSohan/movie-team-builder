@@ -1,15 +1,23 @@
 import PropTypes from "prop-types";
 
-const Budget = (props) => {
+const Budget = ({ invested }) => {
   return (
-    <div className="w-full h-[300px] bg-slate-200 space-y-5 mb-10">
-      <h1 className=" ">
-        Budget:<span>20000</span>$
+    <div className="w-full p-5 bg-slate-200 space-y-5 mb-10">
+      <h1>
+        Total Budget:<span>30000</span>$
+      </h1>
+      <h1>
+        Invested :<span>{invested}</span>$
+      </h1>
+      <h1>
+        Remaining:<span></span>$
       </h1>
     </div>
   );
 };
 
-Budget.propTypes = {};
+Budget.propTypes = {
+  invested: PropTypes.number.isRequired,
+};
 
 export default Budget;

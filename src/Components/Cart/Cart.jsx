@@ -8,7 +8,7 @@ const Cart = ({ cart, handleHireButton }) => {
       <h1 className="text-xl font-bold ">{name}</h1>
       <div className="flex justify-center gap-3 font-bold">
         <h3>{role}</h3>
-        <h3>{salary} $</h3>
+        <h3>{salary}$</h3>
       </div>
       <div className="text-center ">
         <button

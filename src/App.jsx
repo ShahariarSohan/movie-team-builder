@@ -5,11 +5,17 @@ import SelectionBoard from "./Components/SelectionBoard/SelectionBoard";
 
 function App() {
   const [hired, setHired] = useState([]);
+  const [invested, setInvested] = useState(0);
   const handleHireButton = (id, cart) => {
     const duplicate = hired.find((cast) => cast.id === id);
     if (duplicate) {
       alert(`You have already hired him`);
     } else {
+      {
+        invested > 30000
+          ? `${alert("You have not such budget")}`
+          : setInvested(invested + cart.salary);
+      }
       setHired([...hired, cart]);
     }
   };
@@ -19,7 +25,7 @@ function App() {
         <h1 className="m-10 text-center text-3xl font-bold">MOVIE MAKING</h1>
         <div className="flex gap-5">
           <Carts handleHireButton={handleHireButton}></Carts>
-          <SelectionBoard hired={hired}></SelectionBoard>
+          <SelectionBoard hired={hired} invested={invested}></SelectionBoard>
         </div>
       </div>
     </>
