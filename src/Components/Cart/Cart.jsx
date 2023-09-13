@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleHireButton }) => {
   const { image, name, role, salary } = cart;
-  console.log(cart);
   return (
     <div className=" cart-div p-10 space-y-3  bg-slate-500  rounded-lg mx-auto">
       <img src={image}></img>
@@ -12,7 +11,10 @@ const Cart = ({ cart }) => {
         <h3>{salary} $</h3>
       </div>
       <div className="text-center ">
-        <button className=" mx-auto btn bg-red-400 px-10 py-2 font-bold text-white rounded-md">
+        <button
+          onClick={() => handleHireButton(cart)}
+          className=" mx-auto btn bg-red-400 px-10 py-2 font-bold text-white rounded-md"
+        >
           Hire
         </button>
       </div>
@@ -22,6 +24,7 @@ const Cart = ({ cart }) => {
 
 Cart.propTypes = {
   cart: PropTypes.object.isRequired,
+  handleHireButton: PropTypes.func.isRequired,
 };
 
 export default Cart;

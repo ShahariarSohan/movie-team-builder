@@ -3,7 +3,7 @@ import Cart from "../Cart/Cart";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const Carts = () => {
+const Carts = ({ handleHireButton }) => {
   const [carts, setCarts] = useState([]);
   useEffect(() => {
     fetch(`data.json`)
@@ -13,12 +13,18 @@ const Carts = () => {
   return (
     <div className="cart-container w-2/3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
       {carts.map((cart) => (
-        <Cart key={cart.id} cart={cart}></Cart>
+        <Cart
+          key={cart.id}
+          cart={cart}
+          handleHireButton={handleHireButton}
+        ></Cart>
       ))}
     </div>
   );
 };
 
-Carts.propTypes = {};
+Carts.propTypes = {
+  handleHireButton: PropTypes.func.isRequired,
+};
 
 export default Carts;
